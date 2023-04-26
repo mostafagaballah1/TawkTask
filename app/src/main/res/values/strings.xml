@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Tawk Task</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="saved_success">Note Saved Successfully ....</string>
+    <string name="no_internet">No Internet</string>
+    <string name="internet_connection_error">Internet connection error</string>
+    <string name="swipe_refresh">Swipe and refresh to try again.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="err_http_internet">Please connect to Internet</string>
+    <string name="err_http_unknown">Unknown connection issue</string>
+    <string name="err_http_auth">Please login to reach your profile</string>
+    <string name="retry">Retry</string>
+    <string name="save">SAVE</string>
+    <string name="job_title">Name </string>
+    <string name="company_name">Company </string>
+    <string name="jb_details">Blog</string>
+    <string name="following">Following : </string>
+    <string name="followers">Followers : </string>
+    <string name="note">Note</string>
+    <string name="add_note_here">add note here ...</string>
+    <string name="enter_note_msg">Please Enter Your Note</string>
+    <string name="search">Search ...</string>
+</resources>

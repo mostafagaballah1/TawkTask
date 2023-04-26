@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_auth"
+    app:startDestination="@id/jobsFragment2">
+
+    <fragment
+        android:id="@+id/jobsFragment2"
+        android:name="com.example.tawk.ui.fragments.users.UsersFragment"
+        android:label="JobsFragment" >
+        <action
+            android:id="@+id/action_jobsFragment2_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.tawk.ui.fragments.details.DetailsFragment"
+        android:label="DetailsFragment" >
+        <action
+            android:id="@+id/action_detailsFragment_to_jobsFragment2"
+            app:destination="@id/jobsFragment2" />
+    </fragment>
+</navigation>

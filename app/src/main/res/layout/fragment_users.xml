@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10">
+
+                    <ImageButton
+                        android:id="@+id/searchIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/search_icon"
+                        android:background="@null"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        />
+
+                    <EditText
+                        android:id="@+id/text_edit_search"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="9"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/drawable_corner"
+                        android:hint="@string/search"
+                        android:paddingStart="20dp" />
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/no_internet_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/red"
+            android:fontFamily="@font/poppins_reg"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/no_internet_connection"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/no_internet_message"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+                <include layout="@layout/item_shimmer_effect" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/shimmerFrameLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="8dp"
+                app:layoutManager="LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_item_toastify_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="@id/swipeRefresh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
