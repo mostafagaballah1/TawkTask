@@ -10,6 +10,8 @@
 
 - Save note
 
+- Offline mode
+
 - Show marker on applied users who has notes
 
 - Some unit testing
